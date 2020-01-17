@@ -173,6 +173,7 @@ void setup()
   Serial.begin(115200);
   Serial.setDebugOutput(true);  
   pinMode(LED_BUILTIN, OUTPUT);
+  Serial.println("Hi");
 
   delay(3000);
   Serial.println("\n Starting");
