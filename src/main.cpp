@@ -58,6 +58,7 @@ String getDownloadUrl()
       String payload = http.getString();
       USE_SERIAL.println(payload);
       downloadUrl = payload;
+      
     } else {
       USE_SERIAL.println("Device is up to date!");
     }
@@ -173,7 +174,7 @@ void setup()
   Serial.begin(115200);
   Serial.setDebugOutput(true);  
   pinMode(LED_BUILTIN, OUTPUT);
-  Serial.println("Hi");
+ 
 
   delay(3000);
   Serial.println("\n Starting");
@@ -197,6 +198,7 @@ void setup()
   if (downloadUrl.length() > 0)
   {
     bool success = downloadUpdate(downloadUrl);
+    
     if (!success)
     {
       USE_SERIAL.println("Error updating device");
